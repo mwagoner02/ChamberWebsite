@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Webpage</title>
+  <style>
+    /* CSS styles for the tab bar */
+    ul.tab-bar {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #FFFFFF;
+      position: relative;
+      text-align: center; /* Center align the tab bar text */
+    }
+
+    /* Accent Color */
+    ul.tab-bar:before {
+      content: "";
+      position: absolute;
+      bottom: 100;
+      left: 0;
+      width: 100%;
+      height: 12px;
+      background-color: #002EBF; /* Accent color */
+    }
+
+    ul.tab-bar li {
+      display: inline-block; /* Display the tabs in a row */
+    }
+
+    /* White Header */
+    ul.tab-bar li a { 
+      display: block;
+      color: #000000;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      width: 100%; /* Added property */
+    }
+
+    /* Hover Color */
+    ul.tab-bar li a:hover {
+      background-color: #D8DAEA;
+    }
+
+    /* Active Color */
+    ul.tab-bar li a.active {
+      background-color: #D8DAEA;
+    }
+
+    /* CSS styles for the header */
+    header {
+      background-image: url('White_Background.jpg');
+      background-size: auto;
+      background-position: center;
+      padding: 300px 250px 50px;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    h1 {
+      margin-top: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      color: black;
+      font-family: "Copperplate";
+      font-size: 300%;
+    }
+
+    nav {
+      position: absolute;
+      top: 0%;
+      left: 0;
+      right: 0;
+    }
+
+	.logo {
+    position: absolute;
+    bottom: 120px; /* Adjust the top position */
+    left: 1680px; /* Adjust the left position */
+    height: 250px;
+    width; 300px;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Smooth scrolling animation for tabs
+      $('a[href^="#"]').on('click', function(event) {
+        var target = $(this.getAttribute('href'));
+        if (target.length) {
+          event.preventDefault();
+          $('html, body').stop().animate({
+            scrollTop: target.offset().top
+          }, 800);
+        }
+      });
+    });
+  </script>
+</head>
+<body style="background-color:#EBEBEC;">
+  <header>
+    <h1>Welcome to the United Corpus Christi Chamber of Commerce</h1>
+    <nav>
+      <ul class="tab-bar">
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+	<img src="logo_coc.png" alt="Logo" class="logo">
+  </header>
+  
+  <main>
+    <section id="home">
+      <h2>Home</h2>
+      <p>This is the home section of the webpage.</p>
+    </section>
+    
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Write something about yourself here.</p>
+    </section>
+    
+    <section id="contact">
+      <h2>Contact Information</h2>
+      <p>Email: yourname@example.com</p>
+      <p>Phone: 123-456-7890</p>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2023 My Webpage. All rights reserved.</p>
+  </footer>
+</body>
+</html>
